@@ -1,0 +1,56 @@
+[
+  {
+    "id": "1",
+    "img": "https://i.ibb.co/s34czRH/burger-stand.jpg",
+    "price": 89,
+    "name": "Burger Stand Double"
+  },
+  {
+    "id": "2",
+    "img": "https://i.ibb.co/zFp5fph/nestle-garden.jpg",
+    "price": 75,
+    "name": "Nestle Garden Burger "
+  },
+  {
+    "id": "3",
+    "img": "https://i.ibb.co/99mVShr/green-dubble.jpg",
+    "price": 50,
+    "name": "Green Salad Burger"
+  },
+  {
+    "id": "4",
+    "img": "https://i.ibb.co/Y2RF1Q6/double-cheddar-with-chicken.jpg",
+    "price": 63,
+    "name": "Double cheddar with chicken"
+  },
+  {
+    "id": "5",
+    "img": "https://i.ibb.co/RCGc1T8/delicious-grilled.jpg",
+    "price": 53,
+    "name": "Delicious grilled Burger"
+  },
+  {
+    "id": "6",
+    "img": "https://i.ibb.co/LRrJ2X4/chicken-burger.jpg",
+    "price": 58,
+    "name": "Chicken burger"
+  },
+  {
+    "id": "7",
+    "img": "https://i.ibb.co/P5zrCQq/meat-cheese-salad.jpg",
+    "price": 87,
+    "name": "Meat cheese salad"
+  },
+  {
+    "id": "8",
+    "img": "https://i.ibb.co/T2nr4mx/beef-cotlet-burger.jpg",
+    "price": 79,
+    "name": "Beef cotlet burger"
+  },
+  {
+    "id": "9",
+    "img": "https://i.ibb.co/ZxxW3zs/hamburger-with-double-beef-french.jpg",
+    "price": 35,
+    "name": "Double beef french Burger"
+  }
+]
