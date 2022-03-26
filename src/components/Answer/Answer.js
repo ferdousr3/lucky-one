@@ -25,12 +25,10 @@ const Answer = ({ question, answer }) => {
     <div>
       <h2> Answer all Questions</h2>
       {asnAndQues.map((ansQues) => (
-        <>
-          <div className="py-3">
-            <h4 key={ansQues.id}>{ansQues.ques}</h4>
-            <h6>{ansQues.ans}</h6>
-          </div>
-        </>
+        <div key={ansQues.id} className="py-3">
+          <h4>{ansQues.ques}</h4>
+          <h6>{ansQues.ans}</h6>
+        </div>
       ))}
     </div>
   );
