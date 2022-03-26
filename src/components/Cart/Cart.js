@@ -4,22 +4,19 @@ import { TrashIcon } from "@heroicons/react/solid";
 import './Cart.css'
 
 const Cart = (props) => {
-  const {cart} = props
-  
+  const {cart, handleRemoveToCart} = props
+
   console.log(props)
   return (
     <div className="card border">
       <Card.Body>
-        <Card.Title>Add Your Product</Card.Title>
+        <Card.Title>Add Your Burger</Card.Title>
         <p>cart:{cart.length}</p>
         <div>
           {cart.map((cartData) => (
             <div className="cart" key={cartData.id}>
-              <img
-                src={cartData.img}
-                alt={cartData.name}
-              />
-              <p className='cart-product-name'>{cartData.name}</p>
+              <img src={cartData.img} alt={cartData.name} />
+              <p className="cart-product-name">{cartData.name}</p>
               <button className="cart-btn">
                 <TrashIcon className="cart-btn-icons" />
               </button>
@@ -28,7 +25,11 @@ const Cart = (props) => {
         </div>
         <Button variant="primary">Choose 1 for Me</Button>
 
-        <Button className="mt-2" variant="success">
+        <Button
+          onClick={() => handleRemoveToCart()}
+          className="mt-2"
+          variant="success"
+        >
           Choose Again
         </Button>
       </Card.Body>

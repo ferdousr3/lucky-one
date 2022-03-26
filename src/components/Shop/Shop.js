@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Card, Button } from "react-bootstrap";
 import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
 import "./Shop.css";
@@ -10,7 +9,6 @@ const Shop = () => {
   // set product to cart
   const [cart, setCart] = useState([]);
   // remove product from cart
-  const [remove, setRemove] = useState([]);
 
   useEffect(() => {
     fetch("product.json")
@@ -20,21 +18,29 @@ const Shop = () => {
 
   // add to cart product
   const handleAddToCart = (product) => {
-    const newCart = [...cart, product];
-    if (newCart.length <= 4 ) {
-      setCart(newCart);
-    } else {
-      alert(" You Can't Add More than 4  ");
+    let cartItem = false;
+    for (let i = 0; i < cart.length; i++) {
+      if (cart[i].id === product.id) {
+        cartItem = true;
+      }
     }
 
-    // console.log("new cart", newCart);
+    if (cartItem === true) {
+      alert("Cart Item Already exist");
+    } else {
+      const newCart = [...cart, product];
+      if (newCart.length <= 4) {
+        setCart(newCart);
+      } else {
+        alert(" You Can't Add More than 4  ");
+      }
+    }
   };
 
   // Remove all added product from cart
-
-  // const handleRemoveToCart=()=>{
-  //   const removeCart
-  // }
+  const handleRemoveToCart = (product) => {
+    setCart([]);
+  };
 
   return (
     <div className="mt-5">
@@ -58,14 +64,7 @@ const Shop = () => {
           </div>
           {/* cart part */}
           <div className="col-12 col-sm-12 col-md-3">
-            <p>product: {cart.length}</p>
-            <Cart cart={cart}></Cart>
-
-            {/* <Button variant="primary">Choose 1 for Me</Button>
-
-            <Button className="mt-2" variant="success">
-              Choose Again
-            </Button> */}
+            <Cart cart={cart} handleRemoveToCart={handleRemoveToCart}></Cart>
           </div>
         </div>
       </div>
