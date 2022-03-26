@@ -6,7 +6,7 @@ import './Product.css'
 const Product = (props) => {
   // console.log(props);
   const{handleAddToCart, product} = props
-  const {id, name, img, price } = product;
+  const { name, img, price } = product;
   return (
     <div className="p-2  card product">
       <img src={img} alt={name} />

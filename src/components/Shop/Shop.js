@@ -5,20 +5,36 @@ import Product from "../Product/Product";
 import "./Shop.css";
 
 const Shop = () => {
+  // set all product
   const [products, setProducts] = useState([]);
+  // set product to cart
   const [cart, setCart] = useState([]);
+  // remove product from cart
+  const [remove, setRemove] = useState([]);
+
   useEffect(() => {
     fetch("product.json")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
 
+  // add to cart product
   const handleAddToCart = (product) => {
-    // console.log(product);
     const newCart = [...cart, product];
-    setCart(newCart);
+    if (newCart.length <= 4 ) {
+      setCart(newCart);
+    } else {
+      alert(" You Can't Add More than 4  ");
+    }
+
     // console.log("new cart", newCart);
   };
+
+  // Remove all added product from cart
+
+  // const handleRemoveToCart=()=>{
+  //   const removeCart
+  // }
 
   return (
     <div className="mt-5">
