@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Answer from "../Answer/Answer";
 import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
 import "./Shop.css";
@@ -9,7 +10,7 @@ const Shop = () => {
   // set product to cart
   const [cart, setCart] = useState([]);
   // random item
-   const [random, setRandom] = useState({});
+  const [randomSelect, setRandomSelect] = useState({});
 
   useEffect(() => {
     fetch("product.json")
@@ -40,9 +41,9 @@ const Shop = () => {
 
   // get random item
   const handleRandomItem = () => {
-    const newCart = [...cart, random];
-   const randomItem = newCart[Math.floor(Math.random() * newCart.length)];
-    setRandom(randomItem);
+    const newCart = [...cart, randomSelect];
+    const randomItem = newCart[Math.floor(Math.random() * newCart.length)];
+    setRandomSelect(randomItem);
   };
   // Remove all added product from cart
   const handleRemoveToCart = (product) => {
@@ -52,11 +53,11 @@ const Shop = () => {
   return (
     <div className="mt-5">
       <div className="container mt-5 mt-60">
+        <h3 className="py-3 text-center">Choose Your favorite 4 Burger</h3>
         <div className="row">
           {/* product part */}
           <div className="col-12 col-sm-12 col-md-9">
             <div className="row">
-              <div className="random-select"></div>
               {products.map((product) => (
                 <div
                   key={product.id}
@@ -76,20 +77,14 @@ const Shop = () => {
               cart={cart}
               handleRemoveToCart={handleRemoveToCart}
               handleRandomItem={handleRandomItem}
-              randomData={random}
+              randomData={randomSelect}
             ></Cart>
           </div>
         </div>
+        {/* answer question part */}
         <div className="row py-5">
-          <div className="col-12 col-sm-12 col-md-8 mx-auto">
-            <h4>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
-              molestiae quam aspernatur tempora at laudantium cum,
-              necessitatibus odit tempore sapiente! Quaerat ut cumque neque enim
-              accusantium eaque doloremque reprehenderit, libero illum ex non
-              vel, ipsum rerum distinctio quo earum optio ullam alias molestiae
-              iure error consequatur beatae vitae consequuntur. Obcaecati.
-            </h4>
+          <div className="col-12 col-sm-12 col-md-9 mx-auto border p-4">
+            <Answer/>
           </div>
         </div>
       </div>

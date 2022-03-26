@@ -2,20 +2,14 @@
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: start;
+
   margin: 20px 0px;
 }
 .random-item{
   display: flex;
-  justify-content: start;
   align-items: center;
   margin-bottom: 6px;
 }
-/* .random-item img{
-   width: 30px;
-  height: 30px;
-  border-radius: 50%;
-} */
 .my-card-image img{
   width: 30px;
   height: 30px;

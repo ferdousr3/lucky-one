@@ -10,7 +10,6 @@ const Cart = ( props) => {
     handleRemoveToCart,
     handleRandomItem,
     randomData,
-    handleRemoveToRandom,
   } = props;
   return (
     <div className="card border my-card-image">
